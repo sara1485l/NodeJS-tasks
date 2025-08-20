@@ -93,7 +93,7 @@ const rl = readline.createInterface({ input, output });
     function askGuess() {
     if (attempts === 0) {
         console.log("You lost the game!! try again");
-          return rl.close();
+        return rl.close();
 
     }
 
