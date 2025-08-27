@@ -1,0 +1,21 @@
+const {app}=require('./index')
+const {getLoginPage,postLogin} = require("./controllers/loginController");
+const{showRegister,registerUser}=require("./controllers/registerController")
+const {logout} = require('./controllers/logoutController')
+const{ AddStudentPage, AddStudent }= require('./controllers/add-studentController')
+const { GetAllStudents, DeleteStudent } = require('./controllers/studentsController');
+const{GetAllUsers,DeleteUser}=require('./controllers/usersControllers')
+
+app.get('/login',getLoginPage)
+app.post('/login',postLogin)
+app.get('/register',showRegister)
+app.post('/register',registerUser)
+app.post('/logout', logout)
+app.get('/add-student',AddStudentPage)
+app.post('/add-student',AddStudent)
+app.get('/students',GetAllStudents)
+app.get('/users',GetAllUsers)
+app.post('/delete-user/:id',DeleteUser)
+// app.get('/edit-student/:id')
+// app.post('/edit-student/:id')
+app.post('/delete-student/:id',DeleteStudent)
